@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block metatags %}
+<title>{{ object.title }}</title>
+<meta name="description" content="{{ object.metades}}" />
+<meta property="og:title" content="{{ object.title }}">
+<meta property="og:site_name" content="GeeksForGeeks">
+<meta property="og:url" content="{% url 'post_detail' object.slug %}">
+<meta property="og:description" content="{{ object.metades }}">
+<meta property="og:type" content="article">
+{% endblock %}
+{% block content %}
+
+<style type="text/css">
+	#container img {
+		border-radius: 29px;
+		width: 100%;
+		height: 360px;
+		opacity: 0.7;
+		align-content: center;
+	}
+
+	#container img {
+		opacity: 1.0;
+	}
+
+	a {
+		text-align: center;
+		text-decoration: none;
+	}
+	.box_img {
+		height: 90px;
+		width: 90px;
+	}
+</style>
+
+<div class="container">
+	<div class="row">
+		
+		<div class="col-md-6 left">
+			<h1 class="card-title">
+				{% block title %} 
+				{{ object.title }} 
+				{% endblock title %}
+			</h1>
+			<p class=" text-muted">{{ object.author }} {{ object.author.last_name }} |{{ object.created_on }}
+			</p>
+			<div class="card">
+				<img src="{{ object.post_images.url }}" alt="image" style="max-width: 300px;" >
+			</div>
+
+
+
+
+			<p class="card-text">{{ object.content | safe }}</p>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+{% endblock content %}
