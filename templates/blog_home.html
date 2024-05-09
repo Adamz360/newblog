@@ -46,7 +46,7 @@
                     <div class="basis-[70%] pl-[15px]">
                         <span class="text-[#777777]">{{ post.created_on}}</span>
                         <h3 class="text-[18px] font-semibold mt-[5px] ">
-                            <a href="blog-single.html" class="text-[#444444] transition-all hover:text-[#3756f7]">5
+                            <a href="{% url 'post_detail' post.slug %}" class="text-[#444444] transition-all hover:text-[#3756f7]">5
                                 </a>
                                 {{ post.title }}
                         </h3>
@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="pt-3">
                                         <h2 class="text-xl font-heading-font mb-8 font-bold mt-3 xl:text-lg xl:mb-2 ">
-                                            <a href="blog-single.html"
+                                            <a href="{% url 'post_detail' post.slug %}"
                                                 class="text-[#444] transition-all hover:text-[#3756f7]">
                                                 {{ post.title }}
                                             </a>
@@ -102,7 +102,7 @@
                                                 <!-- <img src="assets/images/blog/blog-avater/img-1.jpg" alt=""
                                                         class="w-[40px] h-[40px] rounded-[50%] mr-2"> -->
                                             </li>
-                                            <li class="text-base text-[#3756f7]">By <a href="blog-single.html"
+                                            <li class="text-base text-[#3756f7]">By <a href="#"
                                                     class="text-[#003aae] transition-all hover:text-[#3756f7]">
                                                     {{ post.author}}
                                                 </a>
@@ -114,12 +114,12 @@
                                             </li>
                                         </ul>
 
-                                        <p class="text-[#444444] text-base">
+                                        <!-- <p class="text-[#444444] text-base">
                                             {{ post.metades}} 
-                                         </p>
+                                         </p> -->
                                     </div>
                                 </div>
-                                <span><a href="% url 'post_detail' post.slug %" class="btn btn-outline-primary">Read
+                                <span><a href="{% url 'post_detail' post.slug %}" class="btn btn-outline-primary">Read
                                         More →</a></span>
                             </div>
                              {% endfor %} 

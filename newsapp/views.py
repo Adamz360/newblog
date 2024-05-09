@@ -15,4 +15,6 @@ class postdetail(generic.DetailView):
     template_name = "blog_post.html"
 
 
+def about(request):
+    return render(request, 'about.html')
 
