@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-6txb#ax_62e6+*)2279pkqi$gmb+ho291^m#g(pvo6fi)gef^b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+# the setting for allowed host is for hosting on Railway
+ALLOWED_HOSTS = ["*"] 
 
 
 # Application definition
@@ -119,6 +121,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+#
+
+# this static file is for reqiured for hosting project on railway
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # media urls
